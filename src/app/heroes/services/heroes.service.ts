@@ -13,7 +13,7 @@ export class HeroesService {
   // * httpClient is for making http requests
   constructor(private http: HttpClient) {}
 
-  // ! HTTP REQUESTS:
+  // ! HTTP REQUESTS METHODS:
   getHeroes(): Observable<HeroInterface[]> {
     return this.http.get<HeroInterface[]>(`${this.base}/heroes`);
   }

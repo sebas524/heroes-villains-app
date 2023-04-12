@@ -8,9 +8,11 @@ import { HeroesService } from '../../services/heroes.service';
   styles: [],
 })
 export class ListPageComponent implements OnInit {
+  // * fetchedHeroes is where data will be placed:
   public fetchedHeroes: HeroInterface[] = [];
   constructor(private heroesService: HeroesService) {}
   ngOnInit(): void {
+    // * http request:
     this.heroesService.getHeroes().subscribe((data) => {
       return (this.fetchedHeroes = data);
     });

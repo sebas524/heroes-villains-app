@@ -1,5 +1,14 @@
-<p>list-page works!</p>
+<h1>Heroes:</h1>
 
-<ol>
-  <li *ngFor="let hero of fetchedHeroes">{{ hero.superhero }}</li>
-</ol>
+<mat-divider></mat-divider>
+
+<!-- ! GRID: -->
+<div class="grid bm-8 pt-4">
+  <div
+    class="col-12 sm:col-4 md:col-3 xl:col-2"
+    *ngFor="let hero of fetchedHeroes"
+  >
+    <!-- TODO: hero card goes here -->
+    <component-hero-card [inputHero]="hero"></component-hero-card>
+  </div>
+</div>
