@@ -8,6 +8,11 @@
   <!-- *not all cards need an image. -->
 
   <!-- TODO: image -->
+  <img
+    mat-card-image
+    [src]="'assets/heroes/' + inputHero.id + '.jpg'"
+    [alt]="inputHero.superhero"
+  />
   <!-- !CARD BODY -->
   <mat-card-content class="mt-2"
     ><h4>{{ inputHero.publisher }}</h4>
