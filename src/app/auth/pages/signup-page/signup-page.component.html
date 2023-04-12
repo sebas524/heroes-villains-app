@@ -1,1 +1,22 @@
-<p>signup-page works!</p>
+<div class="flex flex-column">
+  <span class="text-lg mb-4">Register</span>
+  <mat-form-field
+    ><mat-label>user</mat-label
+    ><input type="text" placeholder="username" matInput
+  /></mat-form-field>
+  <mat-form-field
+    ><mat-label>email</mat-label
+    ><input type="email" placeholder="email" matInput
+  /></mat-form-field>
+  <mat-form-field
+    ><mat-label>password</mat-label
+    ><input type="password" placeholder="password" matInput
+  /></mat-form-field>
+  <button mat-button mat-raised-button color="accent">
+    <mat-icon>how_to_reg</mat-icon>Register
+  </button>
+
+  <div class="flex justify-content-end mt-5">
+    <a routerLink="/auth/login">Already have an account? Click here! </a>
+  </div>
+</div>
