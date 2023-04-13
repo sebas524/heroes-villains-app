@@ -1,1 +1,5 @@
 <p>hero-page works!</p>
+
+<ng-template #loading> </ng-template>
+
+<div *ngIf="fetchedHero; else loading"></div>
