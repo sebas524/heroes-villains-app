@@ -1,5 +1,53 @@
-<p>hero-page works!</p>
+<ng-template #loading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
 
-<ng-template #loading> </ng-template>
+<div class="grid" *ngIf="fetchedHero; else loading">
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-header>
+      <mat-card-title>{{ fetchedHero.alter_ego }}</mat-card-title>
+      <mat-card-subtitle>{{ fetchedHero.superhero }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      class="img-single"
+      mat-card-image
+      [src]="fetchedHero | heroImage"
+      [alt]="fetchedHero.superhero"
+    />
+  </mat-card>
 
-<div *ngIf="fetchedHero; else loading"></div>
+  <mat-card class="col-12 sm:col-2">
+    <mat-card-header>
+      <mat-card-title>Info</mat-card-title>
+      <mat-card-subtitle>{{ fetchedHero.superhero }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item
+          ><strong>First appearence: </strong
+          >{{ fetchedHero.first_appearance }}</mat-list-item
+        >
+        <mat-list-item
+          ><strong>Characters: </strong
+          >{{ fetchedHero.characters }}</mat-list-item
+        >
+        <mat-list-item
+          ><strong>Publisher: </strong
+          >{{ fetchedHero.publisher }}</mat-list-item
+        >
+        <mat-list-item
+          ><strong>Alter ego: </strong
+          >{{ fetchedHero.alter_ego }}</mat-list-item
+        >
+      </mat-list>
+
+      <button mat-flat-button color="primary" (click)="goBack()">
+        Go Back
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
