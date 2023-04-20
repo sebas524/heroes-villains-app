@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'new-hero', component: NewHeroPageComponent },
       { path: 'search', component: SearchPageComponent },
-      { path: 'edit/:id', component: SearchPageComponent },
+      { path: 'edit/:id', component: NewHeroPageComponent },
       { path: 'list', component: ListPageComponent },
       // ! should always be last before **:
       { path: ':id', component: HeroPageComponent },
